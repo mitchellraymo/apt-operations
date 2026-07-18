@@ -1,0 +1,2 @@
+asset_id,description,manufacturer,model,serial_number,range,resolution,location,owner,last_calibration,next_due,status,certificate_reference,notes
+SAMPLE-CAL-001,SAMPLE ONLY - Digital caliper,Example Manufacturer,EX-6,SAMPLE123,0-6 in,0.0005 in,Sample Lab,Sample Owner,2099-01-01,2099-12-31,SAMPLE-NOT-FOR-USE,SAMPLE-CERT,Delete this row and use approved real asset data
