@@ -1,0 +1,30 @@
+name: Process or system nonconformance
+description: Report a repository, process-control, or system issue. Do not place sensitive production evidence in a public repository.
+title: "[NC] "
+labels: ["nonconformance"]
+body:
+  - type: textarea
+    id: requirement
+    attributes:
+      label: Requirement or expected condition
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: Objective observation
+      description: State what was observed without assigning blame.
+    validations:
+      required: true
+  - type: textarea
+    id: containment
+    attributes:
+      label: Immediate containment
+      description: Identify affected scope and actions preventing unintended use.
+    validations:
+      required: true
+  - type: textarea
+    id: traceability
+    attributes:
+      label: Traceability references
+      description: Use approved identifiers or secure-system links; do not paste restricted data.

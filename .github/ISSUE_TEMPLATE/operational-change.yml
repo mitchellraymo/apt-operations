@@ -1,0 +1,40 @@
+name: Operational change
+description: Propose a controlled procedure, equipment, calibration, training, or reporting change.
+title: "[CHANGE] "
+labels: ["operational-change"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Controlled area
+      options: [Operations, Calibration, Quality, Equipment, Training, Reports, Software]
+    validations:
+      required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: Need and intended outcome
+      description: State the problem, affected process, and measurable result.
+    validations:
+      required: true
+  - type: textarea
+    id: risk
+    attributes:
+      label: Quality, safety, customer, and compliance impact
+      description: Include affected parts, jobs, records, equipment, training, and requirements.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification and acceptance criteria
+      description: Define objective evidence that will show the change works.
+    validations:
+      required: true
+  - type: checkboxes
+    id: handling
+    attributes:
+      label: Data handling
+      options:
+        - label: No customer-sensitive, export-controlled, CUI, credential, or personal data is included.
+          required: true
