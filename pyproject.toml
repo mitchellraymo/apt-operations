@@ -1,48 +1,33 @@
-# [Procedure title]
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
 
-| Field | Value |
-| --- | --- |
-| Document ID | TBD |
-| Revision | DRAFT |
-| Owner | TBD |
-| Approver | TBD |
-| Effective date | TBD |
-| Supersedes | New document |
+[project]
+name = "apt-operations"
+version = "0.1.0"
+description = "Operational validation tools for American Precision Technology manufacturing workflows"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Proprietary" }
+authors = [{ name = "American Precision Technology" }]
+dependencies = []
 
-> TEMPLATE — NOT APPROVED FOR PRODUCTION USE. Replace every bracketed instruction and TBD value.
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
 
-## Purpose
+[project.scripts]
+apt-ops = "apt_ops.cli:main"
 
-[State the controlled outcome.]
+[tool.hatch.build.targets.wheel]
+packages = ["src/apt_ops"]
 
-## Scope
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
 
-[Define included products, processes, locations, and exclusions.]
+[tool.ruff]
+line-length = 100
+target-version = "py311"
 
-## Responsibilities
-
-[Assign execution, verification, approval, and record-retention responsibility.]
-
-## Prerequisites and safety
-
-[List training, PPE, drawings/revisions, environmental conditions, equipment, and calibration status.]
-
-## Procedure
-
-1. [Use observable, sequential actions.]
-2. [Identify required in-process checks and hold points.]
-3. [Define reaction plan for an unacceptable result.]
-
-## Acceptance criteria
-
-[Cite the authoritative requirement and define measurable criteria.]
-
-## Records
-
-[List record name, owner, approved location, and retention rule.]
-
-## Revision history
-
-| Revision | Date | Change | Author | Approver |
-| --- | --- | --- | --- | --- |
-| DRAFT | TBD | Initial draft | TBD | TBD |
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
