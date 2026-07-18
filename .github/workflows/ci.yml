@@ -4,6 +4,10 @@ on:
   pull_request:
   push:
     branches: [main]
+  schedule:
+    # GitHub cron uses UTC: 07:00 is 03:00 EDT / 02:00 EST.
+    - cron: "0 7 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: read
